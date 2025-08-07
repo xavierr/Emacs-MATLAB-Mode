@@ -856,9 +856,9 @@ Call debug activate/deactivate features."
 (defvar matlab-shell-gud-minor-mode-map
   (let ((km (make-sparse-keymap))
         (key ?\ ))
-    (while (<= key ?~)
-      (define-key km (string key) 'matlab-shell-gud-mode-help-notice)
-      (setq key (1+ key)))
+    ;; (while (<= key ?~)
+    ;;   (define-key km (string key) 'matlab-shell-gud-mode-help-notice)
+    ;;   (setq key (1+ key)))
     (define-key km "\C-h" 'matlab-shell-gud-mode-help)
 
     ;; mlgud bindings.
