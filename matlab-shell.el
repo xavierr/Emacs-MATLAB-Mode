@@ -857,7 +857,7 @@ Argument STR is the text for the anchor."
             (overlay-put o 'mouse-face 'highlight)
             (overlay-put o 'face 'underline)
             (overlay-put o 'matlab-url anchor-text)
-            (overlay-put o 'keymap matlab-shell-html-map)
+            ;; (overlay-put o 'keymap matlab-shell-html-map)
             (overlay-put o 'help-echo anchor-text)
             (delete-region anchor-end-start anchor-end-finish)
             (delete-region anchor-beg-start anchor-beg-finish)
@@ -972,7 +972,7 @@ Input STR is provided by comint but is unused."
           ;; The url will recycle opentoline code.
           (overlay-put o 'matlab-url url)
           (overlay-put o 'matlab-fullfile err-full-file)
-          (overlay-put o 'keymap matlab-shell-html-map)
+          ;; (overlay-put o 'keymap matlab-shell-html-map)
           (overlay-put o 'help-echo (concat "Jump to error at " (or err-full-file err-file) "."))
           (setq first url)
           (push o overlaystack)
