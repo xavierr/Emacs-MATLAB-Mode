@@ -17,8 +17,7 @@ function ebclear(varargin)
 % Emacs version of dbstop.  Tells emacs which breakpoints are active.
 
     args = emacsstripremote(varargin);
-
-    dbclear(args);
+    dbclear(args{:});
 
     % Send emacs some breakpoints
     bp = getappdata(groot, 'EmacsBreakpoints');
