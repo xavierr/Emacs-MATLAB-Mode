@@ -388,7 +388,10 @@ Returns nil if unable to determine the MATLABROOT."
 
     ;; Interrupt
     (define-key km [(control c) (control c)] #'matlab-shell-interrupt-subjob)
-
+    (define-key km [(control c) (control q)] 'mlgud-stop-subjob)
+    (define-key km [(control c) (control n)] 'mlgud-next)
+    (define-key km [(control c) (control r)] 'mlgud-cont)
+    
     ;; Help system
     (define-key km [(control h) (control m)] matlab-help-map)
 

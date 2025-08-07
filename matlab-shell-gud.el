@@ -859,24 +859,23 @@ Call debug activate/deactivate features."
     (while (<= key ?~)
       (define-key km (string key) 'matlab-shell-gud-mode-help-notice)
       (setq key (1+ key)))
-    (define-key km "h" 'matlab-shell-gud-mode-help)
+    (define-key km "\C-h" 'matlab-shell-gud-mode-help)
 
     ;; mlgud bindings.
-    (define-key km "b" 'mlgud-break)
-    (define-key km "x" 'mlgud-remove)
-    (define-key km "c" 'mlgud-cont)
-    (define-key km " " 'mlgud-step)
-    (define-key km "s" 'mlgud-step)
-    (define-key km "n" 'mlgud-next)
-    (define-key km "f" 'mlgud-finish)
-    (define-key km "q" 'mlgud-stop-subjob)
-    (define-key km "<" 'mlgud-up)
-    (define-key km ">" 'mlgud-down)
-    (define-key km "w" 'mlg-show-stack)
-    (define-key km "v" 'mlgud-list-breakpoints)
-    (define-key km "e" 'matlab-shell-gud-show-symbol-value)
+    (define-key km "\C-b" 'mlgud-break)
+    (define-key km "\C-x" 'mlgud-remove)
+    (define-key km "\C-c" 'mlgud-cont)
+    (define-key km "\C-s" 'mlgud-step)
+    (define-key km "\C-n" 'mlgud-next)
+    (define-key km "\C-f" 'mlgud-finish)
+    (define-key km "\C-q" 'mlgud-stop-subjob)
+    ;; (define-key km "\C-<" 'mlgud-up)
+    ;; (define-key km "\C->" 'mlgud-down)
+    (define-key km "\C-w" 'mlg-show-stack)
+    (define-key km "\C-v" 'mlgud-list-breakpoints)
+    (define-key km "\C-e" 'matlab-shell-gud-show-symbol-value)
 
-    (define-key km "\C-x\C-q" 'matlab-shell-gud-mode-edit) ; like toggle-read-only
+    ;; (define-key km "\C-x\C-q" 'matlab-shell-gud-mode-edit) ; like toggle-read-only
 
     km)
   "Keymap used by matlab mode maintainers.")
@@ -940,7 +939,7 @@ Debug commands are:
   (if matlab-shell-gud-minor-mode
       (progn
         ;; Enable
-        (when (buffer-file-name) (setq buffer-read-only t))
+        ;; (when (buffer-file-name) (setq buffer-read-only t))
         (when matlab-shell-debug-tooltips-p
           (mlgud-tooltip-mode 1)
           (add-hook 'tooltip-functions 'gud-matlab-tooltip-tips)
